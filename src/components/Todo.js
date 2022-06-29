@@ -1,10 +1,15 @@
-//props are use to make the custom js
+//props are use to make the custom react component accept data
 function Todo(props){
+  
+
   return(
     <div className="card">
-        <h2 className="h2">Title</h2>
+        {/* We are now accessing our props inside our h2 */}
+        {/* This allows us to accept data and pass it into our H2 component */}
+        {/*Note:To access props we need to use it inside the Curly braces */}
+        <h2 className="h2">{props.text}</h2>
         <div className="actions">
-        <button className="btn">Delete</button>
+        <button className="btn"onClick={}>Delete</button>
         </div>        
       </div>
   );
