@@ -10,8 +10,10 @@ function Todo(props){
     const [modalIsOpen, SetModalIsOpen ] = useState(false);
   function deleteHandler(){
     SetModalIsOpen(true);
-    
-    
+      
+  }
+  function closeHandler(){
+    SetModalIsOpen(false);
   }
 
   return(
@@ -26,8 +28,10 @@ function Todo(props){
         <button className="btn"onClick={deleteHandler}>Delete</button>
         </div>
         {/* ow this will check if ModalIsOpenn is True */}
-        {modalIsOpen && <Modal />}
-        {modalIsOpen &&  <Backdrop />}
+        {/*In React , The Components that we create has to be developed 100% by us i.e we 
+        need to provide access to everything */}
+        {modalIsOpen && <Modal onCancel={closeHandler} onConfirm={closeHandler} /> }
+        {modalIsOpen &&  <Backdrop  onClick={closeHandler}/>}
                
       </div>
   );
